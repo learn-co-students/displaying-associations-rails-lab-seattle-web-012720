@@ -1,0 +1,11 @@
+<h1>All Songs</h1>
+
+<ol>
+<% @songs.each do |song| %>
+    <% if song.artist %>
+        <li><h3><%=link_to song.list_view, song_path(song)%></h3></li>
+    <% else %>
+        <li><h3>Artist Unknown - <%=link_to song.title, song_path(song)%></h3></li>
+    <% end %>
+    <% end %>
+</ol>
